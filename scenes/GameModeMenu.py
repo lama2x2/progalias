@@ -1,7 +1,7 @@
-from Core.Scene import Scene
-from Core.Game import Game
-from UIObjects.Button import Button
-from Scenes.PlayScene import PlayScene
+from core.Scene import Scene
+from core.Game import Game
+from ui_objects.Button import Button
+from scenes.PlayScene import PlayScene
 
 from GameMode import GameMode, Difficulty
 

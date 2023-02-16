@@ -1,10 +1,10 @@
 from typing import TYPE_CHECKING
 import pygame
 
-from Core.UIObject import UIObject
+from core.UIObject import UIObject
 
 if TYPE_CHECKING:
-    from Core.Scene import Scene
+    from core.Scene import Scene
 
 
 class List(UIObject):

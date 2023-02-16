@@ -6,14 +6,14 @@ import pygame
 from GameMode import GameMode
 from Events import WORD_TIMER_EVENT
 
-from Core.Scene import Scene
-from UIObjects.Button import Button
-from UIObjects.Text import Text, Alignment
-from UIObjects.List import List
-from Scenes.WinScene import WinScene
+from core.Scene import Scene
+from ui_objects.Button import Button
+from ui_objects.Text import Text, Alignment
+from ui_objects.List import List
+from scenes.WinScene import WinScene
 
 if TYPE_CHECKING:
-    from Core.Game import Game
+    from core.Game import Game
 
 
 class PlayScene(Scene):

@@ -1,8 +1,8 @@
 import pygame
 from typing import TYPE_CHECKING
 
-from Core.GameObject import GameObject
-from UIObjects.Button import Button
+from core.GameObject import GameObject
+from ui_objects.Button import Button
 
 if TYPE_CHECKING:
     from Game import Game

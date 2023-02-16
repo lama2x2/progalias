@@ -1,7 +1,7 @@
-from Core.Game import Game
-from Core.Scene import Scene
-from UIObjects.Button import Button
-from Scenes.GameModeMenu import GameModeMenu
+from core.Game import Game
+from core.Scene import Scene
+from ui_objects.Button import Button
+from scenes.GameModeMenu import GameModeMenu
 
 
 class Menu(Scene):

@@ -1,5 +1,5 @@
 from enum import Enum
-from Words import *
+from words.Words import *
 
 
 class Difficulty(Enum):

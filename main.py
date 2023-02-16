@@ -1,6 +1,6 @@
 import pygame
-from Core.Game import Game
-from Scenes.Menu import Menu
+from core.Game import Game
+from scenes.Menu import Menu
 
 
 FPS = 60

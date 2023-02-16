@@ -1,11 +1,11 @@
 from typing import TYPE_CHECKING
 import pygame
 
-from Core.UIObject import UIObject
-from UIObjects.Text import Text
+from core.UIObject import UIObject
+from ui_objects.Text import Text
 
 if TYPE_CHECKING:
-    from Core.Scene import Scene
+    from core.Scene import Scene
 
 
 class Button(UIObject):

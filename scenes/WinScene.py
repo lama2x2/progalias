@@ -1,12 +1,12 @@
 from typing import TYPE_CHECKING
 
-from Core.Scene import Scene
-from UIObjects.Text import Text, Alignment
-from UIObjects.Button import Button
-from UIObjects.List import List
+from core.Scene import Scene
+from ui_objects.Text import Text, Alignment
+from ui_objects.Button import Button
+from ui_objects.List import List
 
 if TYPE_CHECKING:
-    from Core.Game import Game
+    from core.Game import Game
 
 
 class WinScene(Scene):
@@ -33,7 +33,7 @@ class WinScene(Scene):
             self.score.add_child(label)
 
     def ok_button_on_click(self):
-        from Scenes.GameModeMenu import GameModeMenu
+        from scenes.GameModeMenu import GameModeMenu
 
         game_mode_menu = GameModeMenu(self.game)
         self.game.set_scene_active(game_mode_menu)
