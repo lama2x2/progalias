@@ -14,9 +14,11 @@ class UIObject(GameObject):
         self.color = pygame.Color(color)
         self.scene = scene
 
-        scene.add_child(self)
+        if scene:
+            scene.add_child(self)
 
         self._is_active = True
+        self.border = True
 
     def set_view(self, position, size, color):
         self.position = position

@@ -19,6 +19,10 @@ class Scene(GameObject):
         self._game = game
 
     @property
+    def center(self) -> tuple[int, int]:
+        return self._game.width // 2, self._game.height // 2
+
+    @property
     def game(self) -> 'Game':
         return self._game
 
@@ -40,6 +44,8 @@ class Scene(GameObject):
     def render(self, surface: pygame.Surface):
         for child in self.children:
             child.render(surface)
+            # print(child)
+        # print('===========')
 
     @property
     def is_active(self) -> bool:
@@ -62,10 +68,7 @@ class Scene(GameObject):
             else:
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
 
-    # def connect_buttons_by_name(self):
-    #     for i in self.children:
-    #         if type(i).__name__ == "Button":
-    #             method_name = f"{i.__name__}_on_click"
-    #             print(method_name)
-    #             if hasattr(self, method_name):
-    #                 i.on_click = eval(method_name)
+    def clear(self):
+        for child in self.children.copy():
+            self.children.remove(child)
+            del child

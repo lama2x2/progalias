@@ -12,10 +12,11 @@ class Button(UIObject):
     hovered_dark_percent = 10
     pressed_dark_percent = 25
 
-    def __init__(self, position, size, color, scene: 'Scene', text: str, font=None, font_color=pygame.Color("black"), font_size=None):
+    def __init__(self, position, size, color, scene: 'Scene',
+                 text='', font=None, font_color=pygame.Color("black"), font_size=None):
         super().__init__(position, size, color, scene)
         self.font_color = font_color
-        self.text = Text(position, size, self.scene, text, font_color, font, font_size)
+        self.text = Text((0, 0), size, None, text, font_color, font, font_size)
 
         self.pressed = False
         self.released = False
@@ -31,35 +32,8 @@ class Button(UIObject):
         self.text.is_active = value
         self.hovered = False
 
-    def set_text(self, text: str, font: pygame.font.Font=None, font_color=None):
+    def set_text(self, text: str, font: pygame.font.Font = None, font_color=None):
         self.text.set_text(text, font, font_color)
-
-    # def render(self, surface: pygame.Surface):
-    #     if not self._is_active:
-    #         return
-
-        # color = pygame.Color(self.color)
-        # font_color = pygame.Color(self.font_color)
-
-        # # Затемняем
-        # hsva = color.hsva
-        # font_hsva = font_color.hsva
-
-        # dark_percent = 0
-        # if self.pressed:
-        #     dark_percent = 25
-        # elif self.hovered:
-        #     dark_percent = 10
-
-        # color.hsva = (hsva[0], hsva[1], max(0.0, hsva[2] - dark_percent), hsva[3])
-        # font_color.hsva = (font_hsva[0], font_hsva[1], max(0.0, font_hsva[2] - dark_percent), font_hsva[3])
-
-        # # Рисуем бэк кнопки
-        # surface.fill(color, self.rect)
-
-        # # Рисуем текст кнопочки
-        # self.text.color = font_color
-        # self.text.render(surface)
 
     def render(self, surface: pygame.Surface):
         if not self._is_active:
@@ -79,7 +53,7 @@ class Button(UIObject):
         text_surface = self.get_text_surface()
         text_x = self.width // 2 - text_surface.get_width() // 2
         text_y = self.height // 2 - text_surface.get_height() // 2
-        surface.blit(self.get_text_surface(), (text_x, text_y))
+        surface.blit(text_surface, (text_x, text_y))
 
         return surface
 
@@ -131,3 +105,8 @@ class Button(UIObject):
 
     def on_click(self):
         pass
+
+    def __del__(self):
+        self.is_active = False
+        del self.text
+        del self
