@@ -110,7 +110,6 @@ class PlayScene(Scene):
         self.teams[self.current_team] += 1
         self.refresh_score()
         self.pick_word()
-        print(self.word_label.size_multiplier)
 
     def handle_event(self, event: pygame.event.Event):
         super(PlayScene, self).handle_event(event)
