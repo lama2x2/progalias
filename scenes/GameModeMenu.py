@@ -27,17 +27,17 @@ class GameModeMenu(Scene):
         self.senior_mode_button.on_click = self.senior_mode_button_on_click
 
     def verbal_mode_button_on_click(self):
-        play_scene = PlayScene(GameMode(Difficulty.VERBAL, 60, 20), {'Красные': 0, 'Синие': 0}, self.game)
+        play_scene = PlayScene(GameMode(Difficulty.VERBAL, 60, 20), {'Красные': 0, 'Белые': 0}, self.game)
         self.game.set_scene_active(play_scene)
 
     def junior_mode_button_on_click(self):
-        play_scene = PlayScene(GameMode(Difficulty.JUNIOR, 60, 20), {'Красные': 0, 'Синие': 0}, self.game)
+        play_scene = PlayScene(GameMode(Difficulty.JUNIOR, 60, 20), {'Красные': 0, 'Белые': 0}, self.game)
         self.game.set_scene_active(play_scene)
 
     def middle_mode_button_on_click(self):
-        play_scene = PlayScene(GameMode(Difficulty.MIDDLE, 60, 20), {'Красные': 0, 'Синие': 0}, self.game)
+        play_scene = PlayScene(GameMode(Difficulty.MIDDLE, 60, 20), {'Красные': 0, 'Белые': 0}, self.game)
         self.game.set_scene_active(play_scene)
 
     def senior_mode_button_on_click(self):
-        play_scene = PlayScene(GameMode(Difficulty.SENIOR, 60, 20), {'Красные': 0, 'Синие': 0}, self.game)
+        play_scene = PlayScene(GameMode(Difficulty.SENIOR, 60, 20), {'Красные': 0, 'Белые': 0}, self.game)
         self.game.set_scene_active(play_scene)
